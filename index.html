@@ -2,821 +2,355 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Devika V R - Portfolio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Devika V R Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
   <style>
-    :root {
-  	--primary: #8b5cf6;        
-  	--primary-dark: #6d28d9;   
-  	--secondary: #a78bfa;     
-  	--dark: #111111;          
-  	--light: #f4f4f5;          
-  	--gray: #71717a;           
-  	--background: #0a0a0a;     
-  	--card-bg: #1f1f1f;        
-}
-
-    
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
     * {
-      margin: 0;
       padding: 0;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
       box-sizing: border-box;
     }
-    
+    html {
+      scroll-behavior: smooth;
+    }
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: var(--background);
-      color: var(--light);
-      line-height: 1.6;
+      background: linear-gradient(to right, rgb(255, 255, 255), rgb(254, 215, 173));
       overflow-x: hidden;
     }
-    
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    
-    /* Terminal-like header */
-    header {
-      background-color: var(--dark);
-      padding: 2rem 0;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-      position: relative;
-    }
-    
-    .header-content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 2rem;
-    }
-    
-    .profile-img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid var(--secondary);
-      box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
-    }
-    
-    .header-text {
-      flex: 1;
-      min-width: 300px;
-    }
-    
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      font-weight: 800;
-    }
-    
-    .tagline {
-      color: var(--gray);
-      margin-bottom: 1.5rem;
-      font-size: 1.1rem;
-    }
-    
-    .contact-info {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      margin-bottom: 1rem;
-    }
-    
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--light);
-    }
-    
-    .social-links {
-      display: flex;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-    
-    .social-link {
-      color: var(--light);
-      font-size: 1.2rem;
-      transition: color 0.3s, transform 0.3s;
-    }
-    
-    .social-link:hover {
-      color: var(--secondary);
-      transform: translateY(-2px);
-    }
-    
-    .download-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background-color: var(--primary);
-      color: white;
-      padding: 0.6rem 1.2rem;
-      border-radius: 6px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background-color 0.3s;
-      margin-top: 1rem;
-    }
-    
-    .download-btn:hover {
-      background-color: var(--primary-dark);
-    }
-    
-    /* Navigation */
     nav {
-      background-color: var(--dark);
+      width: 100%;
+      height: 10vh;
       position: sticky;
       top: 0;
-      z-index: 100;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+      background-color: white;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-    
-    .navbar {
+    .nav-container {
+      width: 100%;
+      height: 100%;
       display: flex;
-      justify-content: center;
-      padding: 1rem 0;
+      justify-content: space-around;
+      align-items: center;
     }
-    
-    .nav-links {
+    .logo {
+      color: black;
+      font-size: 2rem;
+      font-weight: bolder;
+    }
+    .logo span {
+      color: rgb(109, 67, 0);
+      text-shadow: 0 0 10px rgb(109, 67, 0);
+    }
+    .nav-container .links {
       display: flex;
-      list-style: none;
       gap: 2rem;
-      flex-wrap: wrap;
-      justify-content: center;
+      align-items: center;
     }
-    
-    .nav-link {
-      color: var(--light);
+    .nav-container .links a {
+      font-size: 1rem;
+      color: black;
       text-decoration: none;
       font-weight: 500;
       position: relative;
-      padding: 0.5rem 0;
     }
-    
-    .nav-link::after {
-      content: '';
+    .nav-container .links a::before {
+      content: "";
       position: absolute;
-      bottom: 0;
+      bottom: -3px;
       left: 0;
-      width: 0;
+      width: 0%;
       height: 2px;
-      background-color: var(--secondary);
-      transition: width 0.3s;
+      background-color: rgb(109, 67, 0);
+      transition: 0.3s;
     }
-    
-    .nav-link:hover::after {
+    .nav-container .links a:hover::before {
       width: 100%;
     }
-    
-    /* Sections */
     section {
-      padding: 4rem 0;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding: 5rem 2rem;
     }
-    
-    .section-title {
+    h2 {
+      text-align: center;
       font-size: 2rem;
+      color: rgb(109, 67, 0);
       margin-bottom: 2rem;
-      position: relative;
-      display: inline-block;
     }
-    
-    .section-title::after {
-      content: '';
+    .main-container {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .main-container .image {
+      width: 25%;
+      min-width: 250px;
+    }
+    .main-container .image img {
+        width: 100%;
+ 	 border-radius: 50%;         
+  	object-fit: cover;         
+  	aspect-ratio: 1 / 1;      
+  	border: 4px solid #6d4300; 
+  	box-shadow: 0 0 20px rgba(0,0,0,0.1); 
+    }
+    .main-container .content {
+      width: 50%;
+      min-width: 300px;
+    }
+    .content h1 span {
+      color: rgb(109, 67, 0);
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: bold;
+    }
+    .typewriter span {
+      color: rgb(109, 67, 0);
+      font-weight: bold;
+      font-size: 2rem;
+      position: relative;
+    }
+    .typewriter span::before {
+      content: "Developer";
+      animation: words 15s infinite;
+    }
+    .typewriter span::after {
+      content: "";
       position: absolute;
-      bottom: -10px;
-      left: 0;
-      width: 60px;
-      height: 4px;
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
-      border-radius: 2px;
-    }
-    
-    /* About section */
-    .about-content {
-      max-width: 800px;
-      margin: 0 auto;
-      font-size: 1.1rem;
-      line-height: 1.8;
-      color: #e2e8f0;
-    }
-    
-    /* Education section */
-    .education-item {
-      background-color: var(--card-bg);
-      padding: 1.5rem;
-      border-radius: 8px;
-      margin-bottom: 1.5rem;
-      border-left: 4px solid var(--primary);
-      transition: transform 0.3s;
-    }
-    
-    .education-item:hover {
-      transform: translateY(-5px);
-    }
-    
-    .education-item h3 {
-      font-size: 1.3rem;
-      margin-bottom: 0.5rem;
-      color: var(--light);
-    }
-    
-    .education-item .institution {
-      color: var(--secondary);
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      display: block;
-    }
-    
-    .education-item .duration {
-      color: var(--gray);
-      font-size: 0.9rem;
-    }
-    
-  /* Projects section */
-.projects-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-}
-
-.project-card {
-  display: flex; /* Landscape layout */
-  flex-direction: row;
-  background-color: var(--card-bg);
-  border-radius: 8px;
-  overflow: hidden;
-  transition: transform 0.3s, box-shadow 0.3s;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-}
-
-.project-header {
-  flex: 1;
-  padding: 1.5rem;
-  border-right: 1px solid rgba(255, 255, 255, 0.1); /* divider for landscape */
-}
-
-.project-title {
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.project-link {
-  color: var(--secondary);
-  font-size: 1.2rem;
-}
-
-.project-link:hover {
-  color: #004d80;
-}
-
-.project-date {
-  color: var(--gray);
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
-}
-
-.project-details {
-  flex: 2;
-  padding: 1.5rem;
-}
-
-.project-details ul {
-  list-style-position: inside;
-  margin-bottom: 1rem;
-}
-
-.project-details li {
-  margin-bottom: 0.5rem;
-}
-
-.project-presented {
-  font-style: italic;
-  color: var(--gray);
-  font-size: 0.9rem;
-}
-
-/* Responsive: stack on smaller screens */
-@media (max-width: 768px) {
-  .project-card {
-    flex-direction: column;
-  }
-
-  .project-header {
-    border-right: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-}
-
-    
-    /* Internships section */
-    .internship-card {
-      background-color: var(--card-bg);
-      padding: 1.5rem;
-      border-radius: 8px;
-      margin-bottom: 1.5rem;
-      border-left: 4px solid var(--secondary);
-    }
-    
-    .internship-title {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-      color: var(--light);
-    }
-    
-    .internship-company {
-      color: var(--secondary);
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-    
-    .internship-date {
-      color: var(--gray);
-      font-size: 0.9rem;
-    }
-    
-    /* Certificates section */
-    .swiper {
       width: 100%;
-      padding: 2rem 0;
+      height: 100%;
+      border-left: 2px solid black;
+      animation: cursor 0.6s linear infinite;
     }
-    
-    .swiper-slide {
-      background-color: var(--card-bg);
-      border-radius: 8px;
-      padding: 1.5rem;
-      height: auto;
-      border: 1px solid rgba(255,255,255,0.1);
+    @keyframes cursor {
+      0% { border-left: 2px solid black; }
+      100% { border-left: 2px solid transparent; }
     }
-    
-    .certificate-title {
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
-      color: var(--light);
+    .typewriter span::before {
+    content: "Final Year Computer Science Engineering Student";
+    animation: none;
     }
-    
-    .certificate-issuer {
-      color: var(--secondary);
-      font-weight: 600;
+    .typewriter span::after {
+    content: "";
+    display: none;
     }
-    
-    /* Skills section */
-    .skills-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 1.5rem;
-    }
-    
-    .skill-category {
-      background-color: var(--card-bg);
-      padding: 1.5rem;
-      border-radius: 8px;
-      border-top: 4px solid var(--primary);
-    }
-    
-    .skill-category h3 {
-      margin-bottom: 1rem;
-      color: var(--light);
-      font-size: 1.1rem;
-    }
-    
-    .skill-list {
-      list-style: none;
-    }
-    
-    .skill-item {
-      margin-bottom: 0.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    
-    .skill-item::before {
-      content: '▹';
-      color: var(--secondary);
-    }
-    
-    
-    /* Terminal effect */
-    .terminal {
-      background-color: #1a1a1a;
-      border-radius: 8px;
-      padding: 1.5rem;
-      font-family: 'Courier New', monospace;
-      margin: 2rem 0;
-      position: relative;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-    }
-    
-    .terminal-header {
-      display: flex;
-      align-items: center;
-      margin-bottom: 1rem;
-    }
-    
-    .terminal-btn {
-      width: 12px;
-      height: 12px;
+    .social-links i {
+      display: inline-block;
+      margin: 10px;
+      font-size: 1.5rem;
+      color: rgb(109, 67, 0);
+      border: 2px solid rgb(109, 67, 0);
       border-radius: 50%;
-      margin-right: 6px;
+      padding: 10px;
+      transition: 0.3s;
     }
-    
-    .terminal-btn.red { background-color: #ff5f56; }
-    .terminal-btn.yellow { background-color: #ffbd2e; }
-    .terminal-btn.green { background-color: #27c93f; }
-    
-    .terminal-title {
-      margin-left: 1rem;
-      color: #888;
-      font-size: 0.8rem;
+    .social-links i:hover {
+      background-color: rgb(109, 67, 0);
+      color: white;
+      transform: scale(1.1);
     }
-    
-    .terminal-body {
-      color: #f8f8f2;
+    .content button {
+      background-color: rgb(109, 67, 0);
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: 0.3s;
     }
-    
-    .command {
-      color: #50fa7b;
+    .content button:hover {
+      background-color: transparent;
+      color: rgb(109, 67, 0);
+      border: 2px solid rgb(109, 67, 0);
+      transform: scale(1.1);
     }
-    
-    .comment {
-      color: #6272a4;
+    ul {
+      list-style-type: disc;
+      padding-left: 2rem;
     }
-    
-    /* Responsive */
-    @media (max-width: 768px) {
-      .header-content {
+    @media screen and (max-width: 768px) {
+      .main-container {
         flex-direction: column;
         text-align: center;
       }
-      
-      .social-links {
-        justify-content: center;
+      .main-container .image,
+      .main-container .content {
+        width: 90%;
       }
-      
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .skills-container {
-        grid-template-columns: 1fr;
-      }
-      
-      .nav-links {
-        gap: 1rem;
+      .nav-container .links {
+        display: none;
       }
     }
-    
-    /* Highlight animation for section navigation */
-    .highlight {
-      animation: highlight 1.5s ease;
-    }
-    
-    @keyframes highlight {
-      0% { background-color: rgba(16, 185, 129, 0.1); }
-      100% { background-color: transparent; }
-    }
-
-    .swiper-button-next,
-.swiper-button-prev {
-  color: var(--primary); /* or use #8b5cf6 directly */
-}
-
-.swiper-button-next::after,
-.swiper-button-prev::after {
-  font-size: 20px; /* optional: resize arrow icons */
-}
-
-/* Swiper pagination dots to violet */
-.swiper-pagination-bullet {
-  background: var(--gray); /* inactive dot color */
-  opacity: 0.5;
-  transition: background 0.3s, opacity 0.3s;
-}
-
-.swiper-pagination-bullet-active {
-  background: var(--primary); /* active dot color - violet */
-  opacity: 1;
-}
-	
   </style>
 </head>
-
 <body>
-  <!-- Terminal-like Header -->
-  <header>
-    <div class="container header-content">
-      <img src="profile.jpg" alt="Devika V R" class="profile-img floating" />
-      <div class="header-text">
-        <h1>Devika V R</h1>
-        <p class="tagline">Computer Science Engineeering Student</p>
-        
-        <div class="footer-bar" style="display: flex; align-items: center; flex-wrap: wrap; gap: 20px;">
-  	<span class="contact-item">
-    	<i class="fas fa-envelope"></i> devikavr777@gmail.com
-  	</span>
-  	<span class="contact-item">
-    	<i class="fas fa-phone"></i> +91 7025907560
-  	</span>
-  	<a href="https://www.linkedin.com/in/devika-V-r-8064a0292" target="_blank" class="social-link">
-    	<i class="fab fa-linkedin-in"></i>
-  	</a>
-  	<a href="https://github.com/devikavr7447" target="_blank" class="social-link">
-    	<i class="fab fa-github"></i>
-  	</a>
-  	<a href="Devika_CV.pdf" download class="download-btn" style="margin-left: 300px;">
-  	<i class="fas fa-download"></i> Download CV
-  	</a>
-	</div>
-      </div>
-    </div>
-  </header>
 
-  <!-- Navigation -->
+  <!-- Navbar -->
   <nav>
-    <div class="container">
-      <ul class="nav-links">
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#education" class="nav-link">Education</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#internships" class="nav-link">Internships</a></li>
-        <li><a href="#certificates" class="nav-link">Certificates</a></li>
-        <li><a href="#skills" class="nav-link">Skills</a></li>
-        <li><a href="#activities" class="nav-link">Leadership</a></li>
-      </ul>
+    <div class="nav-container">
+      <div class="logo"><span>Devika V R</span></div>
+      <div class="links">
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#internships">Internships</a>
+        <a href="#certificates">Certificates</a>
+      </div>
     </div>
   </nav>
 
- <main class="container">
-    <!-- About Section -->
-    <section id="about">
-      <h2 class="section-title">About Me</h2>
-      <div class="education-item" data-aos="fade-up">
-        <h3>Intro</h3>
-        <span class="institution">Driven Computer Science student fueled by curiosity and creativity — passionate about building intelligent systems, writing clean, efficient code, and turning bold ideas into impactful tech solutions.</span>
-      </div> 
- 
-      <div class="education-item" data-aos="fade-up">
-    	<h3>Skills</h3>
-    	<span class="institution">I design tools that scale and connect — blending code with practical networking knowledge.</span>
+  <!-- Hero Section -->
+  <section>
+    <div class="main-container">
+      <div class="image" data-aos="zoom-in">
+        <img src="profile.jpg" alt="Devika V R" />
       </div>
-
-      <div class="education-item" data-aos="fade-up">
-    	<h3>Mission</h3>
-    	<span class="institution">To blend creativity with code and contribute to meaningful projects that positively impact the real world.</span>
-      </div>
-   </section>
-        
-    <!-- Education Section -->
-    <section id="education">
-      <h2 class="section-title">Education</h2>
-      <div class="education-item" data-aos="fade-up">
-        <h3>B.Tech in Computer Science and Engineering</h3>
-        <span class="institution">Adi Shankara Institute of Engineering and Technology</span>
-        <span class="duration">June 2022 – May 2026 | CGPA: 8.89 (Up to Current Semester)</span>
-      </div>
-      
-      <div class="education-item" data-aos="fade-up">
-        <h3>Higher Secondary</h3>
-        <span class="institution">Brahmanandodayam Higher Secondary School,Kalady</span>
-        <span class="duration">June 2020 – May 2022 | Percentage: 98.25%</span>
-      </div>
-      
-      <div class="education-item" data-aos="fade-up">
-        <h3>AISSE (10th)</h3>
-        <span class="institution">Sree Sarada Vidyalaya School, Kalady</span>
-        <span class="duration">June 2019 – March 2020 | Percentage: 92.8%</span>
-      </div>
-    </section>
-
-  <!-- Projects Section -->
-   <section id="projects">
-    <h2 class="section-title">Projects</h2>
-    <div class="projects-grid">
-      <div class="project-card" data-aos="fade-up">
-        <div class="project-header">
-          <div class="project-title">
-            College Bus Schedule and Route Map Application System
-            <a href="https://github.com/devikavr7447/collegebusroute" target="_blank" class="project-link">
-              <i class="fas fa-external-link-alt"></i>
-            </a>
-          </div>
-          <div class="project-date">Jan 2025 – Mar 2025</div>
+      <div class="content">
+        <h1 data-aos="fade-right">I'm <span>Devika V R</span></h1>
+        <div class="typewriter" data-aos="fade-left"><span></span></div>
+        <p data-aos="fade-up">
+          I'm a passionate Computer Science Engineering student at Adi Shankara Institute of Engineering and Technology. I love building intelligent systems, writing clean and efficient code, and turning bold ideas into real-world tech solutions.
+        </p>
+        <div class="social-links" data-aos="zoom-in">
+          <a href="https://github.com/devikavr7447" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://linkedin.com/in/devika-v-r-8064a0292" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="mailto:devikavr777@gmail.com"><i class="fas fa-envelope"></i></a>
         </div>
-        <div class="project-details">
-          <ul>
-            <li>Developed a Django-based web app to assist therapists diagnosing speech disorders</li>
-            <li>Implemented real-time audio capture and MFCC extraction using Librosa</li>
-            <li>Built a Random Forest model (98% accuracy) integrated with Scikit-learn</li>
-            <li>Visualized audio features with Matplotlib; deployed a responsive, secure interface</li>
-          </ul>
-          <p class="project-presented">Presented at: ICMBRE – April 4, 2025</p>
-        </div>
+        <a href="Devika_CV.pdf" download><button data-aos="fade-up">Download CV</button></a>
       </div>
     </div>
   </section>
 
+  <!-- About -->
+  <section id="about">
+    <h2 data-aos="fade-up">About Me</h2>
+    <p data-aos="fade-up" style="max-width: 900px; margin: auto; text-align: center;">
+      Driven Computer Science student fueled by curiosity and creativity — passionate about building intelligent systems, writing clean, efficient code, and turning bold ideas into impactful tech solutions.
+    </p>
+  </section>
 
-    <!-- Internships Section -->
-    <section id="internships">
-      <h2 class="section-title">Internships</h2>
-      <div class="internship-card" data-aos="fade-up">
-        <h3 class="internship-title">Python Development Intern</h3>
-        <span class="internship-company">Zoople Technologies, Kochi</span>
-        <span class="internship-date">July 2024</span>
-        <p>Explored basic and advanced Python programming.</p>
-      </div>
-      <div class="internship-card" data-aos="fade-up">
-        <h3 class="internship-title">Android App Development Intern</h3>
-        <span class="internship-company">Corizo, Banglore</span>
-        <span class="internship-date">March 2024</span>
-        <p>Developed user-friendly Android applications using Flutter in Dart.</p>
-      </div>
-      <div class="internship-card" data-aos="fade-up">
-        <h4 class="internship-title">C++ Intern</h3>
-        <span class="internship-company">WeCode Life, Kochi</span>
-        <span class="internship-date">May 2023</span>
-        <p>Strengthened core C/C++ programming concepts through hands-on exercises.</p>
-      </div>
-    </section>
+  <!-- Education -->
+  <section id="education" style="background-color: #fef6f0;">
+    <h2 data-aos="fade-up">Education</h2>
+    <div style="max-width: 800px; margin: auto;">
+      <ul>
+        <li data-aos="fade-right"><strong>B.Tech in Computer Science Engineering</strong> – Adi Shankara Institute (2022–2026) – CGPA: 8.89</li>
+        <li data-aos="fade-right"><strong>Higher Secondary (Class XII - State)</strong> – Brahmanandodayam HSS (2020–2022) – 98.25%</li>
+        <li data-aos="fade-right"><strong>Secondary School (Class X – CBSE)</strong> – Sree Sarada Vidyalaya (2019–2020) – 92.8%</li>
+      </ul>
+    </div>
+  </section>
 
-    <!-- Certificates Section -->
-    <section id="certificates">
-      <h2 class="section-title">Certificates</h2>
-      <div class="swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <h3 class="certificate-title">Wheeled Mobile Robots</h3>
-            <p class="certificate-issuer">NPTEL</p>
-          </div>
-	  <div class="swiper-slide">
-            <h3 class="certificate-title">Theory Of Computation</h3>
-            <p class="certificate-issuer">NPTEL</p>
-          </div>
-          <div class="swiper-slide">
-            <h3 class="certificate-title">Essential Mathematics For Machine Learning</h3>
-            <p class="certificate-issuer">NPTEL</p>
-          </div>
-          <div class="swiper-slide">
-            <h3 class="certificate-title">Introduction to Artificial Intelligence</h3>
-            <p class="certificate-issuer">Infosys Springboard</p>
-          </div>
-          <div class="swiper-slide">
-            <h3 class="certificate-title">AI Foundations Associate</h3>
-            <p class="certificate-issuer">Oracle Cloud Infrastructure 2025</p>
-          </div>
-        </div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-pagination"></div>
-      </div>
-    </section>
+<!-- Skills -->
+<section id="skills">
+  <h2 data-aos="fade-up" style="text-align: center;">Skills</h2>
+  <table style="margin: auto; text-align: left; border-spacing: 40px 10px;">
+    <tr>
+      <th>Programming Languages</th>
+      <th>Tools & Build Systems</th>
+      <th>Other Technical Skills</th>
+      <th>Soft Skills</th>
+    </tr>
+    <tr data-aos="fade-right">
+      <td>Python</td>
+      <td>GitHub</td>
+      <td>Data Structures & Algorithms</td>
+      <td>Creative Thinking</td>
+    </tr>
+    <tr data-aos="fade-left">
+      <td>C</td>
+      <td>VS Code</td>
+      <td>Mobile Application Development</td>
+      <td>Effective Communication</td>
+    </tr>
+    <tr data-aos="fade-right">
+      <td>C++</td>
+      <td>MySQL</td>
+      <td>Artificial Intelligence / Machine Learning</td>
+      <td>Decision Making</td>
+    </tr>
+    <tr data-aos="fade-left">
+      <td>Java</td>
+      <td></td>
+      <td></td>
+      <td>Team Collaboration</td>
+    </tr>
+    <tr data-aos="fade-right">
+      <td>Dart</td>
+      <td></td>
+      <td></td>
+      <td>Problem Solving</td>
+    </tr>
+    <tr data-aos="fade-left">
+      <td>SQL</td>
+      <td></td>
+      <td></td>
+      <td>Time Management</td>
+    </tr>
+  </table>
+</section>
 
-    <!-- Skills Section -->
-    <section id="skills">
-      <h2 class="section-title">Skills</h2>
-      <div class="skills-container">
-        <div class="skill-category" data-aos="fade-up">
-          <h3>Programming Languages</h3>
-          <ul class="skill-list">
-            <li class="skill-item">Python</li>
-            <li class="skill-item">C</li>
-            <li class="skill-item">C++</li>
-            <li class="skill-item">Java</li>
-            <li class="skill-item">Dart</li>
-            <li class="skill-item">SQL</li>
-          </ul>
-        </div>
-        
-        <div class="skill-category" data-aos="fade-up">
-          <h3>Tools & Build Systems</h3>
-          <ul class="skill-list">
-            <li class="skill-item">GitHub</li>
-            <li class="skill-item">VS Code</li>
-            <li class="skill-item">MySQL</li>
+  <!-- Projects -->
+  <section id="projects" style="background-color: #fef6f0;">
+    <h2 data-aos="fade-up">Projects</h2>
+    <div style="max-width: 900px; margin: auto;">
+      <h3 data-aos="fade-up">College Bus Schedule and Route Map App</h3>
+      <ul data-aos="fade-up">
+        <li>Flutter app with Firebase backend</li>
+        <li>Live driver tracking via OpenRouteService</li>
+        <li>Separate modules: Student, Staff, Driver</li>
+	<li>Real-time route mapping & schedule display</li>
+        <li><a href="https://github.com/devikavr7447/college_bus_route_project" target="_blank">GitHub Link</a></li>
+      </ul>
+    </div>
+  </section>
 
-          </ul>
-        </div>
-        
-        <div class="skill-category" data-aos="fade-up">
-          <h3>Other Technical Skills</h3>
-          <ul class="skill-list">
-            <li class="skill-item">Data Structures & Algorithms:</li>
-            <li class="skill-item">Mobile Application Development</li>
-            <li class="skill-item">Artificial Intelligence/Machine Learning</li>
-          </ul>
-        </div>
-        <div class="skill-category soft-skills" data-aos="fade-up">
-          <h3>Soft Skills</h3>
-          <ul class="skill-list">
-	    <li class="skill-item">Creative Thinking</li>	
-            <li class="skill-item">Effective Communication</li>
-	    <li class="skill-item">Decision Making</li>
-            <li class="skill-item">Team Collaboration</li>
-            <li class="skill-item">Problem Solving</li>
-            <li class="skill-item">Time Management</li>
-	    	
-          </ul>
-        </div>
-      </div>
-    </section>
+<!-- Internships -->
+<section id="internships">
+  <h2 data-aos="fade-up" style="text-align: center;">Internships</h2>
+  <ul style="max-width: 900px; margin: auto; padding: 0; list-style-position: inside;">
+    <li data-aos="fade-right" style="margin-bottom: 24px;">
+      <strong>Python Development Intern</strong> – Zoople Technologies, Kochi (July 2024)
+      <p>Explored basic and advanced Python programming.</p>
+    </li>
+    <li data-aos="fade-right" style="margin-bottom: 24px;">
+      <strong>Android App Development Intern</strong> – Corizo, Bangalore (March 2024)
+      <p>Developed user-friendly Android applications using Flutter in Dart.</p>
+    </li>
+    <li data-aos="fade-right" style="margin-bottom: 24px;">
+      <strong>C++ Intern</strong> – WeCode Life, Kochi (May 2023)
+      <p>Strengthened core C/C++ programming concepts through hands-on exercises.</p>
+    </li>
+  </ul>
+</section>
+
+
+
+
+<!-- Certificates -->
+<section id="certificates" style="background-color: #fef6f0;">
+  <h2 data-aos="fade-up" style="text-align: center;">Certificates</h2>
+  <ul style="max-width: 900px; margin: auto; padding: 0; list-style-position: inside;">
+    <li data-aos="fade-left"><strong>Wheeled Mobile Robots</strong> – NPTEL</li>
+    <li data-aos="fade-left"><strong>Theory Of Computation</strong> – NPTEL</li>
+    <li data-aos="fade-left"><strong>Essential Mathematics For Machine Learning</strong> – NPTEL</li>
+    <li data-aos="fade-left"><strong>Introduction To Artificial Intelligence</strong> – Infosys Springboard</li>
+    <li data-aos="fade-left"><strong>AI Foundations Associate</strong> – Oracle OCI</li>
+    <li data-aos="fade-left"><strong>Data Visualisation: Empowering Business with Insights</strong> – Tata (Forage)</li>
+    <li data-aos="fade-left"><strong>Data Analytics Job Simulation</strong> – Deloitte (Forage)</li>
+    <li data-aos="fade-left"><strong>Solutions Architecture Job Simulation</strong> – AWS(Forage)</li>
+    <li data-aos="fade-left"><strong></strong></li>
+  </ul>
+</section>
+
 
 
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 800,
-      easing: 'ease-in-out',
-      once: true
-    });
-  </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script>
-    const swiper = new Swiper(".swiper", {
-      loop: true,
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-next",
-      },
-      breakpoints: {
-        640: {
-          slidesPerView: 1,
-          spaceBetween: 20,
-        },
-        768: {
-          slidesPerView: 2,
-          spaceBetween: 30,
-        },
-        1024: {
-          slidesPerView: 3,
-          spaceBetween: 40,
-        },
-      }
-    });
-  </script>
-
-  <script>
-    // Highlight section when navigated to
-    document.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', function(e) {
-        const targetId = this.getAttribute('href').substring(1);
-        const targetSection = document.getElementById(targetId);
-        
-        // Remove all highlights first
-        document.querySelectorAll('section').forEach(section => {
-          section.classList.remove('highlight');
-        });
-        
-        // Add highlight to target section
-        targetSection.classList.add('highlight');
-        
-        // Remove highlight after animation completes
-        setTimeout(() => {
-          targetSection.classList.remove('highlight');
-        }, 1500);
-      });
-    });
-    
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
-  </script>
+  <script>AOS.init({ once: true });</script>
 </body>
 </html>
